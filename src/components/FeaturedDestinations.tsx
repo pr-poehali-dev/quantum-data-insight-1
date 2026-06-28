@@ -4,46 +4,25 @@ import { MapPin, ArrowRight } from "lucide-react"
 
 const destinations = [
   {
-    name: "Санторини",
-    country: "Греция",
-    image: "/santorini-sunset.png",
-    description: "Белоснежные домики и потрясающие закаты над морем",
-    price: "от 249 900 ₽",
+    name: "Футляр Classic",
+    country: "Натуральная кожа",
+    image: "https://cdn.poehali.dev/projects/71574c78-1c5e-4c6b-8896-b4ec8c8bb0e2/files/e4a0a49b-4ba1-48e1-b9e4-30e8f2566cf6.jpg",
+    description: "Жёсткий футляр из натуральной кожи с аккуратной строчкой",
+    price: "от 290 ₽",
   },
   {
-    name: "Бали",
-    country: "Индонезия",
-    image: "/bali-indonesia-rice-terraces-tropical-paradise.jpg",
-    description: "Тропический рай с древними храмами и пляжами",
-    price: "от 189 900 ₽",
+    name: "Футляр Premium",
+    country: "Экокожа",
+    image: "https://cdn.poehali.dev/projects/71574c78-1c5e-4c6b-8896-b4ec8c8bb0e2/files/e6594fd8-b236-46e2-8c8c-a2124acf23d3.jpg",
+    description: "Премиальная экокожа с тиснением логотипа золотом",
+    price: "от 220 ₽",
   },
   {
-    name: "Киото",
-    country: "Япония",
-    image: "/kyoto-japan-traditional-temples-cherry-blossoms.jpg",
-    description: "Древние храмы и традиционная японская культура",
-    price: "от 279 900 ₽",
-  },
-  {
-    name: "Мальдивы",
-    country: "Индийский океан",
-    image: "/maldives-overwater-bungalows-crystal-clear-water.jpg",
-    description: "Виллы над водой и нетронутые коралловые рифы",
-    price: "от 349 900 ₽",
-  },
-  {
-    name: "Исландия",
-    country: "Северная Европа",
-    image: "/iceland-northern-lights-waterfalls-dramatic-landsc.jpg",
-    description: "Северное сияние и величественные вулканические ландшафты",
-    price: "от 299 900 ₽",
-  },
-  {
-    name: "Дубай",
-    country: "ОАЭ",
-    image: "/dubai-modern-skyline-luxury-desert.jpg",
-    description: "Современная роскошь и приключения в пустыне",
-    price: "от 229 900 ₽",
+    name: "Серия Color",
+    country: "Экокожа",
+    image: "https://cdn.poehali.dev/projects/71574c78-1c5e-4c6b-8896-b4ec8c8bb0e2/files/b60cb585-4eda-4454-92be-3906d5f41227.jpg",
+    description: "Линейка цветов под фирменный стиль вашей оптики",
+    price: "от 240 ₽",
   },
 ]
 
@@ -54,10 +33,10 @@ export function FeaturedDestinations() {
         {/* Section Header */}
         <div className="max-w-3xl mb-20">
           <h2 className="text-5xl md:text-6xl font-light tracking-tight mb-6 text-balance">
-            Популярные <span className="font-semibold">направления</span>
+            Наша <span className="font-semibold">продукция</span>
           </h2>
           <p className="text-lg text-muted-foreground text-balance leading-relaxed">
-            Лучшие направления с незабываемыми впечатлениями и захватывающей красотой
+            Футляры для очков из премиальной экокожи и натуральной кожи — с бесплатным нанесением вашего логотипа
           </p>
         </div>
 
@@ -106,7 +85,7 @@ export function FeaturedDestinations() {
         {/* View All Button */}
         <div className="text-center mt-16">
           <Button variant="outline" size="lg" className="rounded-full px-8 border-2 bg-transparent">
-            Все направления
+            Запросить каталог
           </Button>
         </div>
       </div>

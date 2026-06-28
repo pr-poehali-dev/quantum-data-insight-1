@@ -4,34 +4,34 @@ import { Calendar, Users, Star } from "lucide-react"
 
 const packages = [
   {
-    title: "Гранд-тур по Европе",
-    duration: "14 дней",
-    groupSize: "12-16 человек",
-    rating: "4.9",
-    reviews: "234",
-    image: "/european-cities-paris-eiffel-tower-romantic.jpg",
-    highlights: ["Париж", "Рим", "Барселона", "Амстердам"],
-    price: "429 900 ₽",
+    title: "Пробная партия",
+    duration: "Срок 5-7 дней",
+    groupSize: "от 50 шт",
+    rating: "Лого",
+    reviews: "бесплатно",
+    image: "https://cdn.poehali.dev/projects/71574c78-1c5e-4c6b-8896-b4ec8c8bb0e2/files/e6594fd8-b236-46e2-8c8c-a2124acf23d3.jpg",
+    highlights: ["Экокожа", "Логотип", "Доставка по РФ"],
+    price: "от 240 ₽/шт",
   },
   {
-    title: "Азиатское приключение",
-    duration: "10 дней",
-    groupSize: "8-12 человек",
-    rating: "4.8",
-    reviews: "189",
-    image: "/asian-temples-thailand-bangkok-golden-temple.jpg",
-    highlights: ["Бангкок", "Сингапур", "Бали", "Куала-Лумпур"],
-    price: "349 900 ₽",
+    title: "Оптовая поставка",
+    duration: "Срок 7-10 дней",
+    groupSize: "от 300 шт",
+    rating: "Лого",
+    reviews: "бесплатно",
+    image: "https://cdn.poehali.dev/projects/71574c78-1c5e-4c6b-8896-b4ec8c8bb0e2/files/e4a0a49b-4ba1-48e1-b9e4-30e8f2566cf6.jpg",
+    highlights: ["Натуральная кожа", "Подсортировка", "Спеццена"],
+    price: "от 190 ₽/шт",
   },
   {
-    title: "Сафари-экспедиция",
-    duration: "7 дней",
-    groupSize: "6-10 человек",
-    rating: "5.0",
-    reviews: "156",
-    image: "/african-safari-wildlife-elephants-sunset.jpg",
-    highlights: ["Серенгети", "Масаи Мара", "Нгоронгоро", "Амбосели"],
-    price: "599 900 ₽",
+    title: "Для сетей оптики",
+    duration: "Индивидуально",
+    groupSize: "от 1000 шт",
+    rating: "Лого",
+    reviews: "бесплатно",
+    image: "https://cdn.poehali.dev/projects/71574c78-1c5e-4c6b-8896-b4ec8c8bb0e2/files/b60cb585-4eda-4454-92be-3906d5f41227.jpg",
+    highlights: ["Фирменный стиль", "Линейка цветов", "Договор"],
+    price: "по запросу",
   },
 ]
 
@@ -42,10 +42,10 @@ export function PopularPackages() {
         {/* Section Header */}
         <div className="max-w-3xl mb-20">
           <h2 className="text-5xl md:text-6xl font-light tracking-tight mb-6 text-balance">
-            Популярные <span className="font-semibold">туры</span>
+            Условия <span className="font-semibold">сотрудничества</span>
           </h2>
           <p className="text-lg text-muted-foreground text-balance leading-relaxed">
-            Тщательно подобранные туры, объединяющие лучшие направления и впечатления
+            Гибкие условия под любой объём — от пробной партии до поставок для сетей оптики
           </p>
         </div>
 
@@ -69,7 +69,7 @@ export function PopularPackages() {
                 <div className="absolute top-4 right-4 flex items-center gap-1 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full">
                   <Star className="h-3.5 w-3.5 fill-primary text-primary" />
                   <span className="text-xs font-semibold">{pkg.rating}</span>
-                  <span className="text-xs text-muted-foreground">({pkg.reviews})</span>
+                  <span className="text-xs text-muted-foreground">{pkg.reviews}</span>
                 </div>
               </div>
 
@@ -103,11 +103,11 @@ export function PopularPackages() {
                 {/* Price & CTA */}
                 <div className="flex items-center justify-between pt-6 border-t border-border">
                   <div>
-                    <div className="text-xs text-muted-foreground mb-1">Цена от</div>
+                    <div className="text-xs text-muted-foreground mb-1">Стоимость</div>
                     <div className="text-2xl font-semibold text-primary">{pkg.price}</div>
                   </div>
                   <Button className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full">
-                    Забронировать
+                    Заказать
                   </Button>
                 </div>
               </div>

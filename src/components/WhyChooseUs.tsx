@@ -1,25 +1,25 @@
-import { Globe, Shield, Headphones, Award } from "lucide-react"
+import { Stamp, Truck, Boxes, Award } from "lucide-react"
 
 const features = [
   {
-    icon: Globe,
-    title: "Глобальная сеть",
-    description: "Доступ к 150+ направлениям по всему миру с местными экспертами и аутентичным опытом",
+    icon: Stamp,
+    title: "Логотип бесплатно",
+    description: "Наносим логотип вашей оптики бесплатно — повышаем узнаваемость бренда и возвращаем клиентов к вам",
   },
   {
-    icon: Shield,
-    title: "Безопасное бронирование",
-    description: "Защищенные платежи и полная страховка путешествий для вашего спокойствия",
+    icon: Truck,
+    title: "Быстрая логистика",
+    description: "Производим и отправляем по всей России оперативно — без долгого ожидания поставок из Китая",
   },
   {
-    icon: Headphones,
-    title: "Поддержка 24/7",
-    description: "Круглосуточная служба поддержки до, во время и после вашей поездки",
+    icon: Boxes,
+    title: "Небольшая партия",
+    description: "Минимальная партия невелика — легко делать оперативную подсортировку под спрос",
   },
   {
     icon: Award,
-    title: "Гарантия лучшей цены",
-    description: "Конкурентные цены с гарантией лучшей цены и гибкими вариантами оплаты",
+    title: "Качество с 2010 года",
+    description: "Каждый футляр проходит через руки мастеров. Среди клиентов — премиальный бренд очков GRESSO",
   },
 ]
 
@@ -30,10 +30,10 @@ export function WhyChooseUs() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
           <h2 className="text-5xl md:text-6xl font-light tracking-tight mb-6 text-balance">
-            Почему выбирают <span className="font-semibold">Horizon Voyages</span>
+            Почему выбирают <span className="font-semibold">Anzler</span>
           </h2>
           <p className="text-lg text-muted-foreground text-balance leading-relaxed">
-            Мы превращаем ваши мечты о путешествиях в реальность с исключительным сервисом и незабываемыми впечатлениями
+            Российское производство кожаных футляров для оптики с понятными преимуществами для оптовиков и сетей оптики
           </p>
         </div>
 
