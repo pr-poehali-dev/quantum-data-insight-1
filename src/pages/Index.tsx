@@ -3,6 +3,7 @@ import { Hero } from "@/components/Hero"
 import { FeaturedDestinations } from "@/components/FeaturedDestinations"
 import { Materials } from "@/components/Materials"
 import { Branding } from "@/components/Branding"
+import { Production } from "@/components/Production"
 import { WhyChooseUs } from "@/components/WhyChooseUs"
 import { PopularPackages } from "@/components/PopularPackages"
 import { Newsletter } from "@/components/Newsletter"
@@ -16,6 +17,7 @@ export default function Index() {
       <FeaturedDestinations />
       <Materials />
       <Branding />
+      <Production />
       <WhyChooseUs />
       <PopularPackages />
       <Newsletter />
