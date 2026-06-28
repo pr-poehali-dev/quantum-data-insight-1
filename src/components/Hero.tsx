@@ -16,10 +16,12 @@ export function Hero() {
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-8 text-center py-32">
         <div className="space-y-8">
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-light tracking-tight text-balance">
-            Кожаные футляры
-            <span className="block font-semibold mt-2">с вашим логотипом</span>
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-semibold tracking-tight text-balance">
+            ANZLER
           </h1>
+          <p className="text-2xl md:text-3xl font-light text-foreground/80 tracking-wide">
+            фабрика кожаных изделий
+          </p>
 
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-balance leading-relaxed">
             Производим премиальные футляры для очков из натуральной кожи и экокожи. Логотип вашей оптики — бесплатно. Своими руками в Пензе с 2010 года.
@@ -46,8 +48,8 @@ export function Hero() {
             <div className="text-sm text-muted-foreground">На рынке кожгалантереи</div>
           </div>
           <div className="space-y-2">
-            <div className="text-4xl md:text-5xl font-light">GRESSO</div>
-            <div className="text-sm text-muted-foreground">Среди наших клиентов</div>
+            <div className="text-4xl md:text-5xl font-light">120+</div>
+            <div className="text-sm text-muted-foreground">Партнёров по всей России</div>
           </div>
           <div className="space-y-2">
             <div className="text-4xl md:text-5xl font-light">100%</div>
