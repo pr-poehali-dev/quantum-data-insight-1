@@ -15,10 +15,10 @@ export default function Index() {
       <Navbar />
       <Hero />
       <FeaturedDestinations />
+      <WhyChooseUs />
       <Materials />
       <Branding />
       <Production />
-      <WhyChooseUs />
       <PopularPackages />
       <Newsletter />
       <Footer />

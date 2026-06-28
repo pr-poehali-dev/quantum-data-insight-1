@@ -24,7 +24,8 @@ export function Hero() {
           </p>
 
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-balance leading-relaxed">
-            Производим премиальные футляры для очков из натуральной кожи и экокожи. Логотип вашей оптики — бесплатно. Своими руками в Пензе с 2010 года.
+            Производим футляры для очков и кожгалантерею<br />
+            под бренд вашей оптики с 2010 года
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
@@ -36,7 +37,7 @@ export function Hero() {
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button size="lg" variant="outline" className="rounded-full px-8 h-14 text-base border-2 bg-transparent">
-              Смотреть продукцию
+              Заказать образцы
             </Button>
           </div>
         </div>
