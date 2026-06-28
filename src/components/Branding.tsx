@@ -1,10 +1,11 @@
 import { Card } from "@/components/ui/card"
+import { Eye, Star, Heart, Trophy } from "lucide-react"
 
 const benefits = [
-  { icon: "👁", title: "Узнаваемость и лояльность" },
-  { icon: "⭐", title: "Премиум-позиция на рынке" },
-  { icon: "❤️", title: "Эмоциональная связь с клиентом" },
-  { icon: "🏆", title: "Уникальное конкурентное преимущество" },
+  { icon: Eye, title: "Узнаваемость и лояльность" },
+  { icon: Star, title: "Премиум-позиция на рынке" },
+  { icon: Heart, title: "Эмоциональная связь с клиентом" },
+  { icon: Trophy, title: "Уникальное конкурентное преимущество" },
 ]
 
 const stampings = [
@@ -43,10 +44,12 @@ export function Branding() {
         </div>
 
         {/* 4 иконки */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
           {benefits.map((b, i) => (
-            <div key={i} className="text-center space-y-3 p-6 rounded-2xl bg-background border border-border">
-              <div className="text-4xl">{b.icon}</div>
+            <div key={i} className="flex flex-col items-center text-center gap-3 py-5 px-4 rounded-2xl bg-background border border-border">
+              <div className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-primary/10 text-primary">
+                <b.icon className="h-5 w-5" />
+              </div>
               <p className="text-sm font-medium leading-snug">{b.title}</p>
             </div>
           ))}
