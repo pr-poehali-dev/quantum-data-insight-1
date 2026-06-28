@@ -37,11 +37,11 @@ const packages = [
 
 export function PopularPackages() {
   return (
-    <section id="packages" className="py-32 bg-background">
+    <section id="packages" className="py-16 bg-background">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
-        <div className="max-w-3xl mb-20">
-          <h2 className="text-5xl md:text-6xl font-light tracking-tight mb-6 text-balance">
+        <div className="max-w-3xl mb-12">
+          <h2 className="text-5xl md:text-6xl font-light tracking-tight mb-4 text-balance">
             Условия <span className="font-semibold">сотрудничества</span>
           </h2>
           <p className="text-lg text-muted-foreground text-balance leading-relaxed">

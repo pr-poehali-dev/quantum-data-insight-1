@@ -31,11 +31,11 @@ const destinations = [
 
 export function FeaturedDestinations() {
   return (
-    <section id="destinations" className="py-32 bg-background">
+    <section id="destinations" className="py-16 bg-background">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
-        <div className="max-w-3xl mb-20">
-          <h2 className="text-5xl md:text-6xl font-light tracking-tight mb-6 text-balance">
+        <div className="max-w-3xl mb-12">
+          <h2 className="text-5xl md:text-6xl font-light tracking-tight mb-4 text-balance">
             Наша <span className="font-semibold">продукция</span>
           </h2>
           <p className="text-lg text-muted-foreground text-balance leading-relaxed">

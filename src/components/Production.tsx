@@ -7,11 +7,11 @@ export function Production() {
   ]
 
   return (
-    <section className="py-32 bg-foreground text-background">
+    <section className="py-16 bg-foreground text-background">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
-        <div className="max-w-3xl mb-20">
-          <h2 className="text-5xl md:text-6xl font-light tracking-tight mb-6 text-balance">
+        <div className="max-w-3xl mb-12">
+          <h2 className="text-5xl md:text-6xl font-light tracking-tight mb-4 text-balance">
             Производство{" "}
             <span className="font-semibold">в Пензе</span>
           </h2>
@@ -22,7 +22,7 @@ export function Production() {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 pb-16 border-b border-background/20">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 pb-10 border-b border-background/20">
           {stats.map((s, i) => (
             <div key={i} className="space-y-3">
               <div className="text-5xl md:text-6xl font-light">{s.value}</div>
@@ -32,7 +32,7 @@ export function Production() {
         </div>
 
         {/* Bottom text */}
-        <p className="mt-16 text-lg text-background/70 leading-relaxed max-w-2xl">
+        <p className="mt-10 text-lg text-background/70 leading-relaxed max-w-2xl">
           Наши мастера работают в отрасли более 35 лет.
           Мы контролируем каждый этап — от выбора материала
           до финальной проверки качества перед отгрузкой.

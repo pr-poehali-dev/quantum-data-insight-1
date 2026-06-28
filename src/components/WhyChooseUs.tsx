@@ -25,11 +25,11 @@ const features = [
 
 export function WhyChooseUs() {
   return (
-    <section id="about" className="py-32 bg-muted/30">
+    <section id="about" className="py-16 bg-muted/30">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
-          <h2 className="text-5xl md:text-6xl font-light tracking-tight mb-6 text-balance">
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <h2 className="text-5xl md:text-6xl font-light tracking-tight mb-4 text-balance">
             Почему выбирают <span className="font-semibold">Anzler</span>
           </h2>
           <p className="text-lg text-muted-foreground text-balance leading-relaxed">

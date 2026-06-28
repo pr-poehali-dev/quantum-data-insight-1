@@ -28,11 +28,11 @@ const stampings = [
 
 export function Branding() {
   return (
-    <section className="py-32 bg-muted/30">
+    <section className="py-16 bg-muted/30">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-5xl md:text-6xl font-light tracking-tight mb-6 text-balance">
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <h2 className="text-5xl md:text-6xl font-light tracking-tight mb-4 text-balance">
             Брендирование — это{" "}
             <span className="font-semibold">не просто логотип</span>
           </h2>
@@ -43,7 +43,7 @@ export function Branding() {
         </div>
 
         {/* 4 иконки */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
           {benefits.map((b, i) => (
             <div key={i} className="text-center space-y-3 p-6 rounded-2xl bg-background border border-border">
               <div className="text-4xl">{b.icon}</div>
