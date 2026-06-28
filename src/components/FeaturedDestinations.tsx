@@ -5,24 +5,27 @@ import { MapPin, ArrowRight } from "lucide-react"
 const destinations = [
   {
     name: "Футляр Classic",
-    country: "Натуральная кожа",
+    country: "Экокожа",
     image: "https://cdn.poehali.dev/projects/71574c78-1c5e-4c6b-8896-b4ec8c8bb0e2/files/e4a0a49b-4ba1-48e1-b9e4-30e8f2566cf6.jpg",
-    description: "Жёсткий футляр из натуральной кожи с аккуратной строчкой",
-    price: "от 290 ₽",
+    description: "Жёсткий футляр из экокожи с тиснением золотом",
+    price: "от 150 ₽",
+    button: "Рассчитать",
   },
   {
     name: "Футляр Premium",
-    country: "Экокожа",
+    country: "Натуральная кожа",
     image: "https://cdn.poehali.dev/projects/71574c78-1c5e-4c6b-8896-b4ec8c8bb0e2/files/e6594fd8-b236-46e2-8c8c-a2124acf23d3.jpg",
-    description: "Премиальная экокожа с тиснением логотипа золотом",
-    price: "от 220 ₽",
+    description: "Футляр кармашек из премиальной кожи с блинтовым тиснением",
+    price: "от 300 ₽",
+    button: "Рассчитать",
   },
   {
     name: "Серия Color",
-    country: "Экокожа",
+    country: "",
     image: "https://cdn.poehali.dev/projects/71574c78-1c5e-4c6b-8896-b4ec8c8bb0e2/files/b60cb585-4eda-4454-92be-3906d5f41227.jpg",
-    description: "Линейка цветов под фирменный стиль вашей оптики",
-    price: "от 240 ₽",
+    description: "Доступна линейка цветов под фирменный стиль вашей оптики",
+    price: "",
+    button: "Подробнее",
   },
 ]
 
@@ -57,10 +60,12 @@ export function FeaturedDestinations() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0" />
 
                 {/* Location Badge */}
-                <div className="absolute top-4 left-4 flex items-center gap-1.5 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full">
-                  <MapPin className="h-3.5 w-3.5 text-primary" />
-                  <span className="text-xs font-medium">{destination.country}</span>
-                </div>
+                {destination.country && (
+                  <div className="absolute top-4 left-4 flex items-center gap-1.5 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full">
+                    <MapPin className="h-3.5 w-3.5 text-primary" />
+                    <span className="text-xs font-medium">{destination.country}</span>
+                  </div>
+                )}
               </div>
 
               {/* Content */}
@@ -73,7 +78,7 @@ export function FeaturedDestinations() {
                 <div className="flex items-center justify-between pt-4 border-t border-border">
                   <span className="text-sm font-semibold text-primary">{destination.price}</span>
                   <Button variant="ghost" size="sm" className="group/btn text-foreground hover:text-primary">
-                    Подробнее
+                    {destination.button}
                     <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
                   </Button>
                 </div>
