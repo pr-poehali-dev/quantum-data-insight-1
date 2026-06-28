@@ -2,6 +2,7 @@ import { Navbar } from "@/components/Navbar"
 import { Hero } from "@/components/Hero"
 import { FeaturedDestinations } from "@/components/FeaturedDestinations"
 import { Materials } from "@/components/Materials"
+import { Branding } from "@/components/Branding"
 import { WhyChooseUs } from "@/components/WhyChooseUs"
 import { PopularPackages } from "@/components/PopularPackages"
 import { Newsletter } from "@/components/Newsletter"
@@ -14,6 +15,7 @@ export default function Index() {
       <Hero />
       <FeaturedDestinations />
       <Materials />
+      <Branding />
       <WhyChooseUs />
       <PopularPackages />
       <Newsletter />
