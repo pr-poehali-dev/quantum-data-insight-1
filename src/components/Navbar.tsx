@@ -35,14 +35,14 @@ export function Navbar() {
             >
               Продукция
             </a>
+            <a href="#about" className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors">
+              О нас
+            </a>
             <a
               href="#packages"
               className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors"
             >
               Условия
-            </a>
-            <a href="#about" className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors">
-              О нас
             </a>
             <a
               href="#contact"
@@ -73,11 +73,11 @@ export function Navbar() {
             <a href="#destinations" className="block text-base font-medium text-foreground/70 hover:text-foreground">
               Продукция
             </a>
-            <a href="#packages" className="block text-base font-medium text-foreground/70 hover:text-foreground">
-              Условия
-            </a>
             <a href="#about" className="block text-base font-medium text-foreground/70 hover:text-foreground">
               О нас
+            </a>
+            <a href="#packages" className="block text-base font-medium text-foreground/70 hover:text-foreground">
+              Условия
             </a>
             <a href="#contact" className="block text-base font-medium text-foreground/70 hover:text-foreground">
               Контакты
