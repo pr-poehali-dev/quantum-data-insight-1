@@ -48,7 +48,7 @@ export function PopularPackages() {
           {packages.map((pkg, index) => (
             <Card
               key={index}
-              className="group overflow-hidden border-0 bg-card hover:shadow-2xl transition-all duration-500"
+              className="group overflow-hidden border-0 bg-card hover:shadow-2xl transition-all duration-500 flex flex-col"
             >
               {/* Image */}
               <div className="relative h-64 overflow-hidden">
@@ -63,8 +63,8 @@ export function PopularPackages() {
               </div>
 
               {/* Content */}
-              <div className="p-6 space-y-6">
-                <div>
+              <div className="p-6 flex flex-col flex-1">
+                <div className="flex-1">
                   <h3 className="text-2xl font-semibold mb-4">{pkg.title}</h3>
 
                   {/* Meta Info */}
@@ -90,7 +90,7 @@ export function PopularPackages() {
                 </div>
 
                 {/* Price & CTA */}
-                <div className="flex items-center justify-between pt-6 border-t border-border">
+                <div className="flex items-center justify-between pt-6 mt-6 border-t border-border">
                   <div>
                     <div className="text-xs text-muted-foreground mb-1">Стоимость</div>
                     <div className="text-2xl font-semibold text-primary">{pkg.price}</div>
