@@ -43,7 +43,7 @@ export function Hero() {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-3 gap-8 md:gap-16 max-w-3xl mx-auto mt-24 pt-16 border-t border-border/50">
+        <div className="grid grid-cols-3 gap-8 md:gap-16 max-w-3xl mx-auto mt-12 pt-10 border-t border-border/50">
           <div className="space-y-2">
             <div className="text-4xl md:text-5xl font-light">15 лет</div>
             <div className="text-sm text-muted-foreground">На рынке кожгалантереи</div>
