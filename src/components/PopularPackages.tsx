@@ -4,33 +4,27 @@ import { Calendar, Users, Star } from "lucide-react"
 
 const packages = [
   {
-    title: "Пробная партия",
-    duration: "Срок 5-7 дней",
-    groupSize: "от 50 шт",
-    rating: "Лого",
-    reviews: "бесплатно",
+    title: "Заказ образцов",
+    duration: "Срок 1-3 дня",
+    groupSize: "от 5 шт",
     image: "https://cdn.poehali.dev/projects/71574c78-1c5e-4c6b-8896-b4ec8c8bb0e2/files/e6594fd8-b236-46e2-8c8c-a2124acf23d3.jpg",
     highlights: ["Экокожа", "Логотип", "Доставка по РФ"],
-    price: "от 240 ₽/шт",
+    price: "БЕСПЛАТНО",
   },
   {
     title: "Оптовая поставка",
-    duration: "Срок 7-10 дней",
-    groupSize: "от 300 шт",
-    rating: "Лого",
-    reviews: "бесплатно",
+    duration: "Срок 7-14 дней",
+    groupSize: "от 150 шт",
     image: "https://cdn.poehali.dev/projects/71574c78-1c5e-4c6b-8896-b4ec8c8bb0e2/files/e4a0a49b-4ba1-48e1-b9e4-30e8f2566cf6.jpg",
-    highlights: ["Натуральная кожа", "Подсортировка", "Спеццена"],
-    price: "от 190 ₽/шт",
+    highlights: ["Подсортировка", "Спеццена", "Логотип бесплатно"],
+    price: "от 150 ₽/шт",
   },
   {
     title: "Для сетей оптики",
     duration: "Индивидуально",
-    groupSize: "от 1000 шт",
-    rating: "Лого",
-    reviews: "бесплатно",
+    groupSize: "от 200 шт",
     image: "https://cdn.poehali.dev/projects/71574c78-1c5e-4c6b-8896-b4ec8c8bb0e2/files/b60cb585-4eda-4454-92be-3906d5f41227.jpg",
-    highlights: ["Фирменный стиль", "Линейка цветов", "Договор"],
+    highlights: ["Фирменный стиль", "Линейка цветов", "Бесплатная доставка по РФ", "Логотип бесплатно"],
     price: "по запросу",
   },
 ]
@@ -65,12 +59,7 @@ export function PopularPackages() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0" />
 
-                {/* Rating Badge */}
-                <div className="absolute top-4 right-4 flex items-center gap-1 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full">
-                  <Star className="h-3.5 w-3.5 fill-primary text-primary" />
-                  <span className="text-xs font-semibold">{pkg.rating}</span>
-                  <span className="text-xs text-muted-foreground">{pkg.reviews}</span>
-                </div>
+
               </div>
 
               {/* Content */}
