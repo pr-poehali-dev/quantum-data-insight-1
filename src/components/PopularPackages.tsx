@@ -17,7 +17,7 @@ const packages = [
   {
     title: "Оптовая поставка",
     duration: "Срок 7-14 дней",
-    groupSize: "от 150 шт",
+    groupSize: "от 50 шт",
     image: packageWholesale,
     highlights: ["Подсортировка", "Спеццена", "Логотип бесплатно"],
     price: "от 150 ₽/шт",
@@ -26,7 +26,7 @@ const packages = [
   {
     title: "Для сетей оптики",
     duration: "Индивидуально",
-    groupSize: "от 200 шт",
+    groupSize: "от 100 шт",
     image: "https://cdn.poehali.dev/projects/71574c78-1c5e-4c6b-8896-b4ec8c8bb0e2/files/b60cb585-4eda-4454-92be-3906d5f41227.jpg",
     highlights: ["Фирменный стиль", "Линейка цветов", "Бесплатная доставка по РФ", "Логотип бесплатно"],
     price: "по запросу",
