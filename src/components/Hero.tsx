@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
+import heroCases from "@/assets/hero-cases.jpg"
 
 export function Hero() {
   return (
@@ -7,10 +8,11 @@ export function Hero() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://cdn.poehali.dev/projects/71574c78-1c5e-4c6b-8896-b4ec8c8bb0e2/files/b60cb585-4eda-4454-92be-3906d5f41227.jpg"
+          src={heroCases}
           alt="Кожаные футляры для очков Anzler"
-          className="w-full h-full object-cover opacity-20"
+          className="w-full h-full object-cover opacity-25"
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/10 to-background" />
       </div>
 
       {/* Content */}
