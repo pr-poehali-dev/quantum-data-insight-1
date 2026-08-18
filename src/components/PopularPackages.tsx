@@ -98,7 +98,7 @@ export function PopularPackages() {
                 <div className="flex items-center justify-between pt-6 mt-6 border-t border-border">
                   <div>
                     <div className="text-xs text-muted-foreground mb-1">Стоимость</div>
-                    <div className="text-2xl font-semibold text-primary">{pkg.price}</div>
+                    <div className={`font-semibold text-primary whitespace-nowrap ${pkg.price.length > 8 ? "text-xl" : "text-2xl"}`}>{pkg.price}</div>
                   </div>
                   <Button className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full">
                     {pkg.buttonText}
