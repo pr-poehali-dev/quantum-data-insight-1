@@ -1,4 +1,5 @@
 import { Card } from "@/components/ui/card"
+import materialEcoleather from "@/assets/material-ecoleather.jpg"
 
 const materials = [
   {
@@ -15,7 +16,7 @@ const materials = [
     thickness: "Толщина 1.0–1.3 мм",
     description:
       "Устойчивость к истиранию свыше 30 000 циклов по стандарту Martindale. Выглядит и ощущается как натуральная кожа, при этом более доступна по цене.",
-    image: "https://cdn.poehali.dev/projects/71574c78-1c5e-4c6b-8896-b4ec8c8bb0e2/files/70854732-a552-4491-8834-7443bca0672b.jpg",
+    image: materialEcoleather,
   },
   {
     tag: "Микрофибра",
