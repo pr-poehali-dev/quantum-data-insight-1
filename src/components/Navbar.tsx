@@ -24,29 +24,31 @@ export function Navbar() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-2xl font-semibold tracking-tight">Anzler</h1>
+            <h1 className={`text-2xl font-semibold tracking-tight transition-colors ${isScrolled ? "text-foreground" : "text-white"}`}>
+              Anzler
+            </h1>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-12">
             <a
               href="#destinations"
-              className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors"
+              className={`text-sm font-medium transition-colors ${isScrolled ? "text-foreground/70 hover:text-foreground" : "text-white/80 hover:text-white"}`}
             >
               Продукция
             </a>
-            <a href="#about" className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors">
+            <a href="#about" className={`text-sm font-medium transition-colors ${isScrolled ? "text-foreground/70 hover:text-foreground" : "text-white/80 hover:text-white"}`}>
               О нас
             </a>
             <a
               href="#packages"
-              className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors"
+              className={`text-sm font-medium transition-colors ${isScrolled ? "text-foreground/70 hover:text-foreground" : "text-white/80 hover:text-white"}`}
             >
               Условия
             </a>
             <a
               href="#contact"
-              className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors"
+              className={`text-sm font-medium transition-colors ${isScrolled ? "text-foreground/70 hover:text-foreground" : "text-white/80 hover:text-white"}`}
             >
               Контакты
             </a>
@@ -54,13 +56,19 @@ export function Navbar() {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-6">
+            <Button
+              className={`rounded-full px-6 transition-colors ${
+                isScrolled
+                  ? "bg-primary text-primary-foreground hover:bg-primary/90"
+                  : "bg-[#d4af7a] text-[#151210] hover:bg-[#e0c090]"
+              }`}
+            >
               Оставить заявку
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
-          <button className="md:hidden p-2" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+          <button className={`md:hidden p-2 ${isScrolled ? "text-foreground" : "text-white"}`} onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
