@@ -2,13 +2,14 @@ import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Calendar, Users, Star } from "lucide-react"
 import packageWholesale from "@/assets/package-wholesale.jpg"
+import packageSamples from "@/assets/package-samples.jpg"
 
 const packages = [
   {
     title: "Заказ образцов",
     duration: "Срок 1-3 дня",
     groupSize: "от 5 шт",
-    image: "https://cdn.poehali.dev/projects/71574c78-1c5e-4c6b-8896-b4ec8c8bb0e2/files/e6594fd8-b236-46e2-8c8c-a2124acf23d3.jpg",
+    image: packageSamples,
     highlights: ["Экокожа", "Логотип", "Доставка по РФ"],
     price: "БЕСПЛАТНО",
   },
