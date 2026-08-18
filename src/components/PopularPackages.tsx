@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Calendar, Users, Star } from "lucide-react"
+import packageWholesale from "@/assets/package-wholesale.jpg"
 
 const packages = [
   {
@@ -15,7 +16,7 @@ const packages = [
     title: "Оптовая поставка",
     duration: "Срок 7-14 дней",
     groupSize: "от 150 шт",
-    image: "https://cdn.poehali.dev/projects/71574c78-1c5e-4c6b-8896-b4ec8c8bb0e2/files/e4a0a49b-4ba1-48e1-b9e4-30e8f2566cf6.jpg",
+    image: packageWholesale,
     highlights: ["Подсортировка", "Спеццена", "Логотип бесплатно"],
     price: "от 150 ₽/шт",
   },
