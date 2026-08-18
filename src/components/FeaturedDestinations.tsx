@@ -1,12 +1,13 @@
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { MapPin, ArrowRight } from "lucide-react"
+import caseClassic from "@/assets/case-classic.jpg"
 
 const destinations = [
   {
     name: "Футляр Classic",
     country: "Экокожа",
-    image: "https://cdn.poehali.dev/projects/71574c78-1c5e-4c6b-8896-b4ec8c8bb0e2/files/e4a0a49b-4ba1-48e1-b9e4-30e8f2566cf6.jpg",
+    image: caseClassic,
     description: "Жёсткий футляр из экокожи с тиснением золотом",
     price: "от 150 ₽",
     button: "Рассчитать",
