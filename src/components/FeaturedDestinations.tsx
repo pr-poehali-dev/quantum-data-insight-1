@@ -2,6 +2,7 @@ import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { MapPin, ArrowRight } from "lucide-react"
 import caseClassic from "@/assets/case-classic.jpg"
+import caseColor from "@/assets/case-color.jpg"
 
 const destinations = [
   {
@@ -25,7 +26,7 @@ const destinations = [
   {
     name: "Серия Color",
     country: "",
-    image: "https://cdn.poehali.dev/projects/71574c78-1c5e-4c6b-8896-b4ec8c8bb0e2/files/b60cb585-4eda-4454-92be-3906d5f41227.jpg",
+    image: caseColor,
     imageFit: "cover" as const,
     description: "Доступна линейка цветов под фирменный стиль вашей оптики",
     price: "",
