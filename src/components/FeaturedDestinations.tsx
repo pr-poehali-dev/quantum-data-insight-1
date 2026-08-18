@@ -9,7 +9,7 @@ const destinations = [
     name: "Футляр Classic",
     country: "Экокожа",
     image: caseClassic,
-    imageFit: "contain" as const,
+    imageFit: "cover" as const,
     description: "Жёсткий футляр из экокожи с тиснением золотом",
     price: "от 150 ₽",
     button: "Рассчитать",
