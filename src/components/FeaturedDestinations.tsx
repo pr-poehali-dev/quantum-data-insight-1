@@ -54,7 +54,7 @@ export function FeaturedDestinations() {
           {destinations.map((destination, index) => (
             <Card
               key={index}
-              className="group overflow-hidden border-0 bg-card hover:shadow-2xl transition-all duration-500 cursor-pointer"
+              className="group overflow-hidden border-0 bg-card hover:shadow-2xl transition-all duration-500 cursor-pointer flex flex-col"
             >
               {/* Image */}
               <div className={`relative h-80 overflow-hidden ${destination.imageFit === "contain" ? "bg-[#e8dcc9]" : ""}`}>
@@ -75,13 +75,13 @@ export function FeaturedDestinations() {
               </div>
 
               {/* Content */}
-              <div className="p-6 space-y-4">
-                <div>
+              <div className="p-6 flex flex-col flex-1">
+                <div className="flex-1 space-y-2">
                   <h3 className="text-2xl font-semibold mb-2">{destination.name}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{destination.description}</p>
                 </div>
 
-                <div className="flex items-center justify-between pt-4 border-t border-border">
+                <div className="flex items-center justify-between pt-4 mt-4 border-t border-border">
                   <span className="text-sm font-semibold text-primary">{destination.price}</span>
                   <Button variant="ghost" size="sm" className="group/btn text-foreground hover:text-primary">
                     {destination.button}
