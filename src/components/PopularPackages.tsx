@@ -12,6 +12,7 @@ const packages = [
     image: packageSamples,
     highlights: ["Экокожа", "Логотип", "Доставка по РФ"],
     price: "БЕСПЛАТНО",
+    buttonText: "Заказать",
   },
   {
     title: "Оптовая поставка",
@@ -20,6 +21,7 @@ const packages = [
     image: packageWholesale,
     highlights: ["Подсортировка", "Спеццена", "Логотип бесплатно"],
     price: "от 150 ₽/шт",
+    buttonText: "Рассчитать",
   },
   {
     title: "Для сетей оптики",
@@ -28,6 +30,7 @@ const packages = [
     image: "https://cdn.poehali.dev/projects/71574c78-1c5e-4c6b-8896-b4ec8c8bb0e2/files/b60cb585-4eda-4454-92be-3906d5f41227.jpg",
     highlights: ["Фирменный стиль", "Линейка цветов", "Бесплатная доставка по РФ", "Логотип бесплатно"],
     price: "по запросу",
+    buttonText: "Рассчитать",
   },
 ]
 
@@ -98,7 +101,7 @@ export function PopularPackages() {
                     <div className="text-2xl font-semibold text-primary">{pkg.price}</div>
                   </div>
                   <Button className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full">
-                    Заказать
+                    {pkg.buttonText}
                   </Button>
                 </div>
               </div>
