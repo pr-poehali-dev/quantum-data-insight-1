@@ -1,4 +1,5 @@
 import { Stamp, Truck, Boxes, Award } from "lucide-react"
+import whychooseBg from "@/assets/whychoose-bg.jpg"
 
 const features = [
   {
@@ -26,6 +27,16 @@ const features = [
 export function WhyChooseUs() {
   return (
     <section id="about" className="relative py-20 bg-[#1a1614] overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src={whychooseBg}
+          alt="Кожгалантерея Anzler"
+          className="w-full h-full object-cover opacity-45"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1a1614]/80 via-[#1a1614]/70 to-[#1a1614]" />
+      </div>
+
       {/* Decorative lines */}
       <svg
         className="absolute left-0 top-0 h-2/3 w-1/2 opacity-20 pointer-events-none hidden md:block -scale-x-100"
