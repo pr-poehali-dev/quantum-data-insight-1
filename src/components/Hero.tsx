@@ -51,7 +51,7 @@ export function Hero() {
             <div className="text-sm text-muted-foreground">На рынке кожгалантереи</div>
           </div>
           <div className="space-y-2">
-            <div className="text-4xl md:text-5xl font-light">120+</div>
+            <div className="text-4xl md:text-5xl font-light">200+</div>
             <div className="text-sm text-muted-foreground">Партнёров по всей России</div>
           </div>
           <div className="space-y-2">
