@@ -57,13 +57,14 @@ export function Navbar() {
           {/* CTA Button */}
           <div className="hidden md:block">
             <Button
+              asChild
               className={`rounded-full px-6 transition-colors ${
                 isScrolled
                   ? "bg-primary text-primary-foreground hover:bg-primary/90"
                   : "bg-[#d4af7a] text-[#151210] hover:bg-[#e0c090]"
               }`}
             >
-              Оставить заявку
+              <a href="#request-form">Оставить заявку</a>
             </Button>
           </div>
 
@@ -90,8 +91,8 @@ export function Navbar() {
             <a href="#contact" className="block text-base font-medium text-foreground/70 hover:text-foreground">
               Контакты
             </a>
-            <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 rounded-full">
-              Оставить заявку
+            <Button asChild className="w-full bg-primary text-primary-foreground hover:bg-primary/90 rounded-full">
+              <a href="#request-form" onClick={() => setIsMobileMenuOpen(false)}>Оставить заявку</a>
             </Button>
           </div>
         </div>

@@ -44,7 +44,7 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#contact" className="hover:text-foreground transition-colors">
+                <a href="#request-form" className="hover:text-foreground transition-colors">
                   Оставить заявку
                 </a>
               </li>

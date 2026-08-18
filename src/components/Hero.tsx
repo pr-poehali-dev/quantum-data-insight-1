@@ -61,18 +61,22 @@ export function Hero() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
             <Button
+              asChild
               size="lg"
               className="bg-[#d4af7a] text-[#1a1614] hover:bg-[#e0c090] rounded-full px-8 h-14 text-base font-normal group"
             >
-              Получить расчёт
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              <a href="#request-form">
+                Получить расчёт
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </a>
             </Button>
             <Button
+              asChild
               size="lg"
               variant="outline"
               className="rounded-full px-8 h-14 text-base font-normal border border-white/30 text-white bg-transparent hover:bg-white/10 hover:text-white"
             >
-              Заказать образцы
+              <a href="#request-form">Заказать образцы</a>
             </Button>
           </div>
         </div>

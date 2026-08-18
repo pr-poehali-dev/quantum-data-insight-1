@@ -101,8 +101,8 @@ export function PopularPackages() {
                     <div className="text-xs text-muted-foreground mb-1">Стоимость</div>
                     <div className={`font-semibold text-primary whitespace-nowrap ${pkg.price.length > 8 ? "text-xl" : "text-2xl"}`}>{pkg.price}</div>
                   </div>
-                  <Button className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full">
-                    {pkg.buttonText}
+                  <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full">
+                    <a href="#request-form">{pkg.buttonText}</a>
                   </Button>
                 </div>
               </div>

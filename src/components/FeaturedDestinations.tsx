@@ -83,9 +83,11 @@ export function FeaturedDestinations() {
 
                 <div className="flex items-center justify-between pt-4 mt-4 border-t border-border">
                   <span className="text-sm font-semibold text-primary">{destination.price}</span>
-                  <Button variant="ghost" size="sm" className="group/btn text-foreground hover:text-primary">
-                    {destination.button}
-                    <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
+                  <Button asChild variant="ghost" size="sm" className="group/btn text-foreground hover:text-primary">
+                    <a href="#request-form">
+                      {destination.button}
+                      <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
+                    </a>
                   </Button>
                 </div>
               </div>
