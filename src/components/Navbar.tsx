@@ -21,7 +21,7 @@ export function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="grid grid-cols-[1fr_auto_1fr] items-center h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
             <h1 className={`text-2xl font-semibold tracking-tight transition-colors ${isScrolled ? "text-foreground" : "text-white"}`}>
@@ -30,7 +30,7 @@ export function Navbar() {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-12">
+          <div className="hidden md:flex items-center gap-12 justify-self-center">
             <a
               href="#destinations"
               className={`text-sm font-medium transition-colors ${isScrolled ? "text-foreground/70 hover:text-foreground" : "text-white/80 hover:text-white"}`}
@@ -55,7 +55,7 @@ export function Navbar() {
           </div>
 
           {/* CTA Button */}
-          <div className="hidden md:block">
+          <div className="hidden md:flex justify-end">
             <Button
               asChild
               className={`rounded-full px-6 transition-colors ${
@@ -69,7 +69,7 @@ export function Navbar() {
           </div>
 
           {/* Mobile Menu Button */}
-          <button className={`md:hidden p-2 ${isScrolled ? "text-foreground" : "text-white"}`} onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+          <button className={`md:hidden justify-self-end p-2 ${isScrolled ? "text-foreground" : "text-white"}`} onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
