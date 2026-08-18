@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card"
 import { Eye, Star, Heart, Trophy } from "lucide-react"
+import stampingHot from "@/assets/stamping-hot.jpg"
 
 const benefits = [
   { icon: Eye, title: "Узнаваемость и лояльность" },
@@ -15,7 +16,7 @@ const stampings = [
     subtitle: "Фольгированное тиснение",
     description:
       "Яркий блестящий эффект — для премиум-дизайнов и брендов, которые хотят выделяться. Золото, серебро, цветная фольга. Подчёркивает статус бренда.",
-    image: "https://cdn.poehali.dev/projects/71574c78-1c5e-4c6b-8896-b4ec8c8bb0e2/files/b5c0ca2e-5324-48ad-9753-d697ad028379.jpg",
+    image: stampingHot,
   },
   {
     symbol: "◻",
