@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card"
 import { Eye, Star, Heart, Trophy } from "lucide-react"
 import stampingHot from "@/assets/stamping-hot.jpg"
+import stampingBlind from "@/assets/stamping-blind.jpg"
 
 const benefits = [
   { icon: Eye, title: "Узнаваемость и лояльность" },
@@ -24,7 +25,7 @@ const stampings = [
     subtitle: "Слепое тиснение",
     description:
       "Стильный минимализм и ощущение премиальности за счёт рельефа. Идеально сочетается с натуральной кожей, подчёркивая её фактуру.",
-    image: "https://cdn.poehali.dev/projects/71574c78-1c5e-4c6b-8896-b4ec8c8bb0e2/files/ddbb9452-23b5-4f84-843d-298882eef741.jpg",
+    image: stampingBlind,
   },
 ]
 
