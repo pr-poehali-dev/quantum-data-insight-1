@@ -1,4 +1,4 @@
-import { Instagram, Send, Phone, Mail, MapPin } from "lucide-react"
+import { Instagram, Send, Phone, Mail, MapPin, MessageCircle } from "lucide-react"
 
 export function Footer() {
   return (
@@ -15,8 +15,11 @@ export function Footer() {
               <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://t.me/anzler" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                 <Send className="h-5 w-5" />
+              </a>
+              <a href="https://max.ru/id583409736520_biz" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                <MessageCircle className="h-5 w-5" />
               </a>
             </div>
           </div>
