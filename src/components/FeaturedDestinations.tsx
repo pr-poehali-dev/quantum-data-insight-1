@@ -92,13 +92,6 @@ export function FeaturedDestinations() {
             </Card>
           ))}
         </div>
-
-        {/* View All Button */}
-        <div className="text-center mt-16">
-          <Button variant="outline" size="lg" className="rounded-full px-8 border-2 bg-transparent">
-            Запросить каталог
-          </Button>
-        </div>
       </div>
     </section>
   )

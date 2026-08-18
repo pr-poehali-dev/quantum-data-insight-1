@@ -48,11 +48,11 @@ export function Branding() {
         {/* 4 иконки */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
           {benefits.map((b, i) => (
-            <div key={i} className="flex flex-col items-center text-center gap-3 py-5 px-4 rounded-2xl bg-background border border-border">
-              <div className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-primary/10 text-primary">
-                <b.icon className="h-5 w-5" />
+            <div key={i} className="flex items-center gap-3 py-3 px-4 rounded-2xl bg-background border border-border">
+              <div className="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-primary/10 text-primary shrink-0">
+                <b.icon className="h-4 w-4" />
               </div>
-              <p className="text-sm font-medium leading-snug">{b.title}</p>
+              <p className="text-sm font-medium leading-snug text-left">{b.title}</p>
             </div>
           ))}
         </div>
