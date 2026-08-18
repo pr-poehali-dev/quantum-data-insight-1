@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button"
 import { Calendar, Users, Star } from "lucide-react"
 import packageWholesale from "@/assets/package-wholesale.jpg"
 import packageSamples from "@/assets/package-samples.jpg"
+import packageOptics from "@/assets/package-optics.jpg"
 
 const packages = [
   {
@@ -27,7 +28,7 @@ const packages = [
     title: "Для сетей оптики",
     duration: "Индивидуально",
     groupSize: "от 100 шт",
-    image: "https://cdn.poehali.dev/projects/71574c78-1c5e-4c6b-8896-b4ec8c8bb0e2/files/b60cb585-4eda-4454-92be-3906d5f41227.jpg",
+    image: packageOptics,
     highlights: ["Фирменный стиль", "Линейка цветов", "Бесплатная доставка по РФ", "Логотип бесплатно"],
     price: "по запросу",
     buttonText: "Рассчитать",
