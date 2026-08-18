@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button"
 import { MapPin, ArrowRight } from "lucide-react"
 import caseClassic from "@/assets/case-classic.jpg"
 import caseColor from "@/assets/case-color.jpg"
+import casePremium from "@/assets/case-premium.jpg"
 
 const destinations = [
   {
@@ -17,7 +18,7 @@ const destinations = [
   {
     name: "Футляр Premium",
     country: "Натуральная кожа",
-    image: "https://cdn.poehali.dev/projects/71574c78-1c5e-4c6b-8896-b4ec8c8bb0e2/files/e6594fd8-b236-46e2-8c8c-a2124acf23d3.jpg",
+    image: casePremium,
     imageFit: "cover" as const,
     description: "Футляр кармашек из премиальной кожи с блинтовым тиснением",
     price: "от 300 ₽",
