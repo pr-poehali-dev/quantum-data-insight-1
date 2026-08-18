@@ -8,6 +8,7 @@ const destinations = [
     name: "Футляр Classic",
     country: "Экокожа",
     image: caseClassic,
+    imageFit: "contain" as const,
     description: "Жёсткий футляр из экокожи с тиснением золотом",
     price: "от 150 ₽",
     button: "Рассчитать",
@@ -16,6 +17,7 @@ const destinations = [
     name: "Футляр Premium",
     country: "Натуральная кожа",
     image: "https://cdn.poehali.dev/projects/71574c78-1c5e-4c6b-8896-b4ec8c8bb0e2/files/e6594fd8-b236-46e2-8c8c-a2124acf23d3.jpg",
+    imageFit: "cover" as const,
     description: "Футляр кармашек из премиальной кожи с блинтовым тиснением",
     price: "от 300 ₽",
     button: "Рассчитать",
@@ -24,6 +26,7 @@ const destinations = [
     name: "Серия Color",
     country: "",
     image: "https://cdn.poehali.dev/projects/71574c78-1c5e-4c6b-8896-b4ec8c8bb0e2/files/b60cb585-4eda-4454-92be-3906d5f41227.jpg",
+    imageFit: "cover" as const,
     description: "Доступна линейка цветов под фирменный стиль вашей оптики",
     price: "",
     button: "Подробнее",
@@ -52,11 +55,11 @@ export function FeaturedDestinations() {
               className="group overflow-hidden border-0 bg-card hover:shadow-2xl transition-all duration-500 cursor-pointer"
             >
               {/* Image */}
-              <div className="relative h-80 overflow-hidden">
+              <div className={`relative h-80 overflow-hidden ${destination.imageFit === "contain" ? "bg-[#e8dcc9]" : ""}`}>
                 <img
                   src={destination.image || "/placeholder.svg"}
                   alt={destination.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  className={`w-full h-full group-hover:scale-110 transition-transform duration-700 ${destination.imageFit === "contain" ? "object-contain" : "object-cover"}`}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0" />
 
