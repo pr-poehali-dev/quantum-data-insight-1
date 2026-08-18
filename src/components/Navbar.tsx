@@ -21,7 +21,7 @@ export function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid grid-cols-[1fr_auto_1fr] items-center h-20">
+        <div className="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
             <h1 className={`text-2xl font-semibold tracking-tight transition-colors ${isScrolled ? "text-foreground" : "text-white"}`}>
