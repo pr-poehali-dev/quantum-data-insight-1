@@ -16,7 +16,7 @@ const destinations = [
     button: "Рассчитать",
   },
   {
-    name: <>Коллекция<br />Бизнес</>,
+    name: "Коллекция Бизнес",
     country: "Экокожа",
     image: casePremium,
     imageFit: "cover" as const,
