@@ -16,7 +16,7 @@ const destinations = [
     button: "Рассчитать",
   },
   {
-    name: "Коллекция Бизнес",
+    name: <>Коллекция<br />Бизнес</>,
     country: "Экокожа",
     image: casePremium,
     imageFit: "cover" as const,
@@ -26,7 +26,7 @@ const destinations = [
   },
   {
     name: "Коллекция Премиум",
-    country: "",
+    country: "Натуральная кожа",
     image: caseColor,
     imageFit: "cover" as const,
     description: "Футляры из 100% натуральной кожи с фольгированным тиснением",
