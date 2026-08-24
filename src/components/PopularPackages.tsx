@@ -25,7 +25,7 @@ const packages = [
     buttonText: "Рассчитать",
   },
   {
-    title: "Для сетей оптики",
+    title: "Для сетей оптик",
     duration: "Индивидуально",
     groupSize: "от 100 шт",
     image: packageOptics,
@@ -45,7 +45,7 @@ export function PopularPackages() {
             Условия <span className="font-semibold">сотрудничества</span>
           </h2>
           <p className="text-lg text-muted-foreground text-balance leading-relaxed">
-            Гибкие условия под любой объём — от пробной партии до поставок для сетей оптики
+            Гибкие условия под любой объём — от пробной партии до поставок для сетей оптик
           </p>
         </div>
 

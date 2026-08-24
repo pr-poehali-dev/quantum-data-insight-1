@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react"
 import heroCases from "@/assets/hero-cases.jpg"
 
 const stats = [
-  { icon: "Award", value: "15 лет", label: "на рынке кожгалантереи" },
+  { icon: "Award", value: "16 лет", label: "на рынке кожгалантереи" },
   { icon: "Users", value: "200+", label: "клиентов по всей России" },
   { icon: "Hand", value: "100%", label: "ручная работа" },
 ]
@@ -56,7 +56,7 @@ export function Hero() {
 
           <p className="text-base md:text-lg font-light text-white/55 max-w-2xl mx-auto text-balance leading-relaxed">
             Производим футляры для очков и кожгалантерею<br />
-            под бренд вашей оптики с 2010 года
+            с 2010 года
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">

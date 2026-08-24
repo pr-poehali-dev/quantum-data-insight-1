@@ -65,7 +65,7 @@ export function WhyChooseUs() {
             Почему выбирают <span className="text-[#e8d5b5]">Anzler</span>
           </h2>
           <p className="text-base md:text-lg font-light text-white/55 text-balance leading-relaxed">
-            Российское производство кожаных футляров для оптики с понятными преимуществами для оптовиков и сетей оптики
+            Российское производство кожаных футляров для оптики с понятными преимуществами для оптовиков и сетей оптик
           </p>
         </div>
 
