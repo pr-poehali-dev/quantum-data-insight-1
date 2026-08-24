@@ -14,18 +14,18 @@ const stampings = [
   {
     symbol: "✦",
     type: "Горячее тиснение",
-    subtitle: "Фольгированное тиснение",
+    subtitle: "",
     description:
-      "Яркий блестящий эффект — для премиум-дизайнов и брендов, которые хотят выделяться. Золото, серебро, цветная фольга. Подчёркивает статус бренда.",
-    image: stampingHot,
+      "Стильный минимализм и ощущение премиальности за счёт рельефа. Идеально сочетается с премиальной экокожей, подчёркивая её фактуру.",
+    image: stampingBlind,
   },
   {
     symbol: "◻",
-    type: "Блинтовое тиснение",
-    subtitle: "Слепое тиснение",
+    type: "Фольгированное тиснение",
+    subtitle: "",
     description:
-      "Стильный минимализм и ощущение премиальности за счёт рельефа. Идеально сочетается с натуральной кожей, подчёркивая её фактуру.",
-    image: stampingBlind,
+      "Яркий блестящий эффект — для премиум-дизайнов и брендов, которые хотят выделяться. Золото, серебро, цветная фольга. Подчёркивает статус бренда.",
+    image: stampingHot,
   },
 ]
 
@@ -73,7 +73,7 @@ export function Branding() {
                   <span className="text-primary font-semibold text-lg">{s.symbol}</span>
                   <div>
                     <h3 className="text-xl font-semibold">{s.type}</h3>
-                    <p className="text-xs text-muted-foreground uppercase tracking-widest">{s.subtitle}</p>
+                    {s.subtitle && <p className="text-xs text-muted-foreground uppercase tracking-widest">{s.subtitle}</p>}
                   </div>
                 </div>
                 <p className="text-sm text-muted-foreground leading-relaxed">{s.description}</p>
