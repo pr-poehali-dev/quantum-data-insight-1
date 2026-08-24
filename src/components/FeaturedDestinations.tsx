@@ -11,8 +11,8 @@ const destinations = [
     country: "Экокожа",
     image: caseClassic,
     imageFit: "cover" as const,
-    description: "Жёсткий футляр из экокожи с тиснением золотом",
-    price: "от 150 ₽",
+    description: "Мягкие и ультралегкие футляры из экокожи с тиснением",
+    price: "от 157 ₽",
     button: "Рассчитать",
   },
   {
