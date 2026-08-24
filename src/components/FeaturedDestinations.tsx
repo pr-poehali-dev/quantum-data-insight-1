@@ -7,7 +7,7 @@ import casePremium from "@/assets/case-premium.jpg"
 
 const destinations = [
   {
-    name: "Футляр Classic",
+    name: "Коллекция Классик",
     country: "Экокожа",
     image: caseClassic,
     imageFit: "cover" as const,
@@ -25,13 +25,13 @@ const destinations = [
     button: "Рассчитать",
   },
   {
-    name: "Серия Color",
+    name: "Коллекция Премиум",
     country: "",
     image: caseColor,
     imageFit: "cover" as const,
-    description: "Доступна линейка цветов под фирменный стиль вашей оптики",
-    price: "",
-    button: "Подробнее",
+    description: "Футляры из 100% натуральной кожи с фольгированным тиснением",
+    price: "от 250 ₽",
+    button: "Рассчитать",
   },
 ]
 
