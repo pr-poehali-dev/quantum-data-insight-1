@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card"
 import materialEcoleather from "@/assets/material-ecoleather.jpg"
+import materialMicrofiber from "@/assets/material-microfiber.jpg"
 
 const materials = [
   {
@@ -24,7 +25,7 @@ const materials = [
     thickness: "Плотность 300–400 г/м²",
     description:
       "Мягкая структура не царапает линзы и оправы. Используем для салфеток и внутренней отделки футляров — идеальная защита для оптики.",
-    image: "https://cdn.poehali.dev/projects/71574c78-1c5e-4c6b-8896-b4ec8c8bb0e2/files/3a3c1572-6496-4bbb-86ce-5befd4f97073.jpg",
+    image: materialMicrofiber,
   },
 ]
 
