@@ -16,12 +16,12 @@ const destinations = [
     button: "Рассчитать",
   },
   {
-    name: "Футляр Premium",
-    country: "Натуральная кожа",
+    name: "Коллекция Бизнес",
+    country: "Экокожа",
     image: casePremium,
     imageFit: "cover" as const,
-    description: "Футляр кармашек из премиальной кожи с блинтовым тиснением",
-    price: "от 300 ₽",
+    description: "Футляры из формованной экокожи с жестким каркасом и фирменным тиснением",
+    price: "от 178 ₽",
     button: "Рассчитать",
   },
   {
