@@ -77,7 +77,7 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-border text-center text-sm text-muted-foreground">
-          <p>2025 Anzler. Фабрика кожаных изделий. Все права защищены.</p>
+          <p>Anzler. Фабрика кожаных изделий. Все права защищены.</p>
         </div>
       </div>
     </footer>

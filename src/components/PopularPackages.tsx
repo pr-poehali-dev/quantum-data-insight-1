@@ -18,16 +18,16 @@ const packages = [
   {
     title: "Оптовая поставка",
     duration: "Срок 7-14 дней",
-    groupSize: "от 50 шт",
+    groupSize: "от 100 шт",
     image: packageWholesale,
     highlights: ["Подсортировка", "Спеццена", "Логотип бесплатно"],
-    price: "от 150 ₽/шт",
+    price: "от 157 ₽/шт",
     buttonText: "Рассчитать",
   },
   {
     title: "Для сетей оптик",
-    duration: "Индивидуально",
-    groupSize: "от 100 шт",
+    duration: "Индивидуальные условия",
+    groupSize: "",
     image: packageOptics,
     highlights: ["Фирменный стиль", "Линейка цветов", "Бесплатная доставка по РФ", "Логотип бесплатно"],
     price: "по запросу",
@@ -79,10 +79,12 @@ export function PopularPackages() {
                       <Calendar className="h-4 w-4" />
                       <span>{pkg.duration}</span>
                     </div>
-                    <div className="flex items-center gap-1.5">
-                      <Users className="h-4 w-4" />
-                      <span>{pkg.groupSize}</span>
-                    </div>
+                    {pkg.groupSize && (
+                      <div className="flex items-center gap-1.5">
+                        <Users className="h-4 w-4" />
+                        <span>{pkg.groupSize}</span>
+                      </div>
+                    )}
                   </div>
 
                   {/* Highlights */}
