@@ -43,7 +43,7 @@ export function Hero() {
         <div className="space-y-6">
           <div className="flex items-center justify-center gap-4 text-[#d4af7a]">
             <span className="h-px w-10 bg-[#d4af7a]/50" />
-            <span className="text-xs font-light tracking-[0.4em] uppercase">Since 2010</span>
+            <span className="text-xs font-light tracking-[0.4em] uppercase">С 2010 г.</span>
             <span className="h-px w-10 bg-[#d4af7a]/50" />
           </div>
 
