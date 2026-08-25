@@ -43,7 +43,7 @@ export function Hero() {
         <div className="space-y-6">
           <div className="flex items-center justify-center gap-4 text-[#d4af7a]">
             <span className="h-px w-10 bg-[#d4af7a]/50" />
-            <span className="text-xs font-light tracking-[0.4em] uppercase">Anzler</span>
+            <span className="text-xs font-light tracking-[0.4em] uppercase">Since 2010</span>
             <span className="h-px w-10 bg-[#d4af7a]/50" />
           </div>
 
@@ -55,8 +55,8 @@ export function Hero() {
           </p>
 
           <p className="text-base md:text-lg font-light text-white/55 max-w-2xl mx-auto text-balance leading-relaxed">
-            Производим футляры для очков и кожгалантерею<br />
-            более 16 лет
+            Производим футляры для очков и кожгалантерею,<br />
+            вкладывая мастерство в каждую деталь
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
