@@ -89,7 +89,7 @@ def send_email(name: str, contact: str, message: str) -> bool:
     msg['To'] = to_email
 
     try:
-        with smtplib.SMTP_SSL(host, int(port), timeout=10) as server:
+        with smtplib.SMTP_SSL(host, int(port), timeout=3) as server:
             server.login(user, password)
             server.sendmail(user, [to_email], msg.as_string())
         return True
@@ -110,7 +110,7 @@ def send_telegram(name: str, contact: str, message: str) -> bool:
 
     try:
         req = urllib.request.Request(url, data=data)
-        with urllib.request.urlopen(req, timeout=10) as resp:
+        with urllib.request.urlopen(req, timeout=3) as resp:
             return resp.status == 200
     except Exception:
         return False
