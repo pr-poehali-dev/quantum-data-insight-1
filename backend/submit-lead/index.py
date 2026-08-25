@@ -54,8 +54,8 @@ def handler(event: dict, context) -> dict:
     )
     lead_id = cur.fetchone()[0]
 
-    email_sent = send_email(name, contact, message)
-    telegram_sent = send_telegram(name, contact, message)
+    email_sent, email_error = send_email(name, contact, message)
+    telegram_sent, telegram_error = send_telegram(name, contact, message)
 
     cur.execute(
         f"UPDATE {schema}.leads SET email_sent = %s, telegram_sent = %s WHERE id = %s",
@@ -68,11 +68,18 @@ def handler(event: dict, context) -> dict:
     return {
         'statusCode': 200,
         'headers': {'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json'},
-        'body': json.dumps({'success': True, 'id': lead_id})
+        'body': json.dumps({
+            'success': True,
+            'id': lead_id,
+            'email_sent': email_sent,
+            'telegram_sent': telegram_sent,
+            'email_error': email_error,
+            'telegram_error': telegram_error,
+        })
     }
 
 
-def send_email(name: str, contact: str, message: str) -> bool:
+def send_email(name: str, contact: str, message: str):
     host = os.environ.get('SMTP_HOST')
     port = os.environ.get('SMTP_PORT')
     user = os.environ.get('SMTP_USER')
@@ -80,7 +87,7 @@ def send_email(name: str, contact: str, message: str) -> bool:
     to_email = 'sales1@anzler.ru'
 
     if not all([host, port, user, password]):
-        return False
+        return False, 'no_smtp_config'
 
     text = f"Новая заявка с сайта Anzler\n\nИмя: {name}\nКонтакт: {contact}\nСообщение: {message or '-'}"
     msg = MIMEText(text, _charset='utf-8')
@@ -92,17 +99,17 @@ def send_email(name: str, contact: str, message: str) -> bool:
         with smtplib.SMTP_SSL(host, int(port), timeout=3) as server:
             server.login(user, password)
             server.sendmail(user, [to_email], msg.as_string())
-        return True
-    except Exception:
-        return False
+        return True, None
+    except Exception as e:
+        return False, f'{type(e).__name__}: {e}'
 
 
-def send_telegram(name: str, contact: str, message: str) -> bool:
+def send_telegram(name: str, contact: str, message: str):
     token = os.environ.get('TELEGRAM_BOT_TOKEN')
     chat_id = os.environ.get('TELEGRAM_CHAT_ID')
 
     if not token or not chat_id:
-        return False
+        return False, 'no_telegram_config'
 
     text = f"🔔 Новая заявка с сайта Anzler\n\n👤 Имя: {name}\n📞 Контакт: {contact}\n💬 Сообщение: {message or '-'}"
     url = f"https://api.telegram.org/bot{token}/sendMessage"
@@ -111,6 +118,9 @@ def send_telegram(name: str, contact: str, message: str) -> bool:
     try:
         req = urllib.request.Request(url, data=data)
         with urllib.request.urlopen(req, timeout=3) as resp:
-            return resp.status == 200
-    except Exception:
-        return False
+            body = resp.read().decode()
+            return resp.status == 200, body
+    except urllib.error.HTTPError as e:
+        return False, f'HTTP {e.code}: {e.read().decode()}'
+    except Exception as e:
+        return False, f'{type(e).__name__}: {e}'
