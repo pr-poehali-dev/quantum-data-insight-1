@@ -1,0 +1,26 @@
+{
+  "tests": [
+    {
+      "name": "OPTIONS preflight",
+      "method": "OPTIONS",
+      "path": "/",
+      "expectedStatus": 200
+    },
+    {
+      "name": "POST заявка без имени",
+      "method": "POST",
+      "path": "/",
+      "body": {"name": "", "contact": "", "message": ""},
+      "expectedStatus": 400
+    },
+    {
+      "name": "POST валидная заявка",
+      "method": "POST",
+      "path": "/",
+      "body": {"name": "Тест Тестов", "contact": "+79990000000", "message": "Тестовая заявка"},
+      "expectedStatus": 200,
+      "expectedBody": {"success": true},
+      "bodyMatcher": "partial"
+    }
+  ]
+}

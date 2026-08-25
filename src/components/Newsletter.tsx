@@ -3,18 +3,36 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import { useToast } from "@/hooks/use-toast"
+
+const SUBMIT_LEAD_URL = "https://functions.poehali.dev/ade99633-239e-4d62-adaa-763ef0331e8b"
 
 export function Newsletter() {
   const [name, setName] = useState("")
   const [phone, setPhone] = useState("")
   const [message, setMessage] = useState("")
+  const [loading, setLoading] = useState(false)
+  const { toast } = useToast()
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log("Заявка:", { name, phone, message })
-    setName("")
-    setPhone("")
-    setMessage("")
+    setLoading(true)
+    try {
+      const res = await fetch(SUBMIT_LEAD_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, contact: phone, message }),
+      })
+      if (!res.ok) throw new Error("Ошибка отправки")
+      toast({ title: "Заявка отправлена", description: "Мы свяжемся с вами в течение рабочего дня" })
+      setName("")
+      setPhone("")
+      setMessage("")
+    } catch {
+      toast({ title: "Не удалось отправить заявку", description: "Попробуйте ещё раз или позвоните нам", variant: "destructive" })
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -57,9 +75,10 @@ export function Newsletter() {
             <Button
               type="submit"
               size="lg"
+              disabled={loading}
               className="w-full bg-primary text-primary-foreground hover:bg-primary/90 rounded-full h-14 text-base"
             >
-              Отправить заявку
+              {loading ? "Отправляем..." : "Отправить заявку"}
             </Button>
           </form>
 
