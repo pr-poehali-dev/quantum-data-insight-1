@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 
-const SUBMIT_LEAD_URL = "https://functions.poehali.dev/ade99633-239e-4d62-adaa-763ef0331e8b";
+const SUBMIT_LEAD_URL = "https://anzler.ru/send_form.php";
 
 export function Newsletter() {
   const [name, setName] = useState("");
