@@ -1,39 +1,46 @@
-import type React from "react"
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { useToast } from "@/hooks/use-toast"
+import type React from "react";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { useToast } from "@/hooks/use-toast";
 
-const SUBMIT_LEAD_URL = "https://functions.poehali.dev/ade99633-239e-4d62-adaa-763ef0331e8b"
+const SUBMIT_LEAD_URL = "https://anzler.ru/send_form.php";
 
 export function Newsletter() {
-  const [name, setName] = useState("")
-  const [phone, setPhone] = useState("")
-  const [message, setMessage] = useState("")
-  const [loading, setLoading] = useState(false)
-  const { toast } = useToast()
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
+  const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setLoading(true)
+    e.preventDefault();
+    setLoading(true);
     try {
       const res = await fetch(SUBMIT_LEAD_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, contact: phone, message }),
-      })
-      if (!res.ok) throw new Error("Ошибка отправки")
-      toast({ title: "Заявка отправлена", description: "Мы свяжемся с вами в течение рабочего дня" })
-      setName("")
-      setPhone("")
-      setMessage("")
+      });
+      if (!res.ok) throw new Error("Ошибка отправки");
+      toast({
+        title: "Заявка отправлена",
+        description: "Мы свяжемся с вами в течение рабочего дня",
+      });
+      setName("");
+      setPhone("");
+      setMessage("");
     } catch {
-      toast({ title: "Не удалось отправить заявку", description: "Попробуйте ещё раз или позвоните нам", variant: "destructive" })
+      toast({
+        title: "Не удалось отправить заявку",
+        description: "Попробуйте ещё раз или позвоните нам",
+        variant: "destructive",
+      });
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
   return (
     <section id="request-form" className="py-16 bg-muted/30">
@@ -44,7 +51,8 @@ export function Newsletter() {
               Оставьте <span className="font-semibold">заявку</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-xl mx-auto text-balance leading-relaxed">
-              Рассчитаем стоимость партии и бесплатно подготовим макет с вашим логотипом. Свяжемся в течение рабочего дня.
+              Рассчитаем стоимость партии и бесплатно подготовим макет с вашим
+              логотипом. Свяжемся в течение рабочего дня.
             </p>
           </div>
 
@@ -88,5 +96,5 @@ export function Newsletter() {
         </div>
       </div>
     </section>
-  )
+  );
 }
