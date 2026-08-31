@@ -83,6 +83,14 @@ export function Footer() {
           <Link to="/privacy-policy" className="underline hover:text-foreground transition-colors">
             Политика обработки персональных данных
           </Link>
+          <span className="hidden sm:inline">·</span>
+          <button
+            type="button"
+            onClick={() => window.dispatchEvent(new Event("open-cookie-settings"))}
+            className="underline hover:text-foreground transition-colors"
+          >
+            Настройки cookie
+          </button>
         </div>
       </div>
     </footer>
