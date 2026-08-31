@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 $smtpHost = 'smtp.yandex.ru';
 $smtpPort = 465;
 $smtpUser = 'anzler.noreply@yandex.ru';
-$smtpPassword = 'ВСТАВЬТЕ_СЮДА_ПАРОЛЬ_ПРИЛОЖЕНИЯ'; // пароль приложения Яндекс.Почты, не обычный пароль
+$smtpPassword = 'lcvafatwfdrjpqdf'; // пароль приложения Яндекс.Почты, не обычный пароль
 $toEmail = 'sales1@anzler.ru';
 // ========================================================================
 
