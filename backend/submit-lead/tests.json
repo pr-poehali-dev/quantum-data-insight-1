@@ -14,10 +14,17 @@
       "expectedStatus": 400
     },
     {
-      "name": "POST валидная заявка",
+      "name": "POST заявка без согласия",
       "method": "POST",
       "path": "/",
       "body": {"name": "Тест Тестов", "contact": "+79990000000", "message": "Тестовая заявка"},
+      "expectedStatus": 400
+    },
+    {
+      "name": "POST валидная заявка",
+      "method": "POST",
+      "path": "/",
+      "body": {"name": "Тест Тестов", "contact": "+79990000000", "message": "Тестовая заявка", "consent_given": true, "consent_given_at": "2026-08-31T10:00:00.000Z"},
       "expectedStatus": 200,
       "expectedBody": {"success": true},
       "bodyMatcher": "partial"

@@ -1,5 +1,6 @@
 import type React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -12,16 +13,37 @@ export function Newsletter() {
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
+  const [consentGiven, setConsentGiven] = useState(false);
+  const [consentGivenAt, setConsentGivenAt] = useState<string | null>(null);
   const { toast } = useToast();
+
+  const handleConsentChange = (checked: boolean) => {
+    setConsentGiven(checked);
+    setConsentGivenAt(checked ? new Date().toISOString() : null);
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!consentGiven || !consentGivenAt) {
+      toast({
+        title: "Подтвердите согласие",
+        description: "Отметьте согласие на обработку персональных данных",
+        variant: "destructive",
+      });
+      return;
+    }
     setLoading(true);
     try {
       const res = await fetch(SUBMIT_LEAD_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, contact: phone, message }),
+        body: JSON.stringify({
+          name,
+          contact: phone,
+          message,
+          consent_given: true,
+          consent_given_at: consentGivenAt,
+        }),
       });
       if (!res.ok) throw new Error("Ошибка отправки");
       toast({
@@ -31,6 +53,8 @@ export function Newsletter() {
       setName("");
       setPhone("");
       setMessage("");
+      setConsentGiven(false);
+      setConsentGivenAt(null);
     } catch {
       toast({
         title: "Не удалось отправить заявку",
@@ -88,11 +112,27 @@ export function Newsletter() {
             >
               {loading ? "Отправляем..." : "Отправить заявку"}
             </Button>
-          </form>
 
-          <p className="text-xs text-muted-foreground">
-            Нажимая кнопку, вы соглашаетесь с обработкой персональных данных
-          </p>
+            <label className="flex items-start gap-3 text-xs text-muted-foreground cursor-pointer">
+              <input
+                type="checkbox"
+                checked={consentGiven}
+                onChange={(e) => handleConsentChange(e.target.checked)}
+                className="mt-0.5 h-4 w-4 shrink-0 rounded border-2 border-input accent-primary"
+              />
+              <span>
+                Я подтверждаю, что ознакомился с{" "}
+                <Link to="/privacy-policy" target="_blank" className="underline hover:text-foreground transition-colors">
+                  Политикой обработки персональных данных
+                </Link>{" "}
+                и даю{" "}
+                <Link to="/consent-policy" target="_blank" className="underline hover:text-foreground transition-colors">
+                  согласие
+                </Link>{" "}
+                на обработку моих персональных данных в соответствии с ней.
+              </span>
+            </label>
+          </form>
         </div>
       </div>
     </section>
