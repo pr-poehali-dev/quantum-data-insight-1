@@ -1,4 +1,5 @@
 import { Instagram, Send, Phone, Mail, MapPin, MessageCircle } from "lucide-react"
+import { Link } from "react-router-dom"
 
 export function Footer() {
   return (
@@ -76,8 +77,12 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-border text-center text-sm text-muted-foreground">
+        <div className="pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-center gap-3 text-center text-sm text-muted-foreground">
           <p>Anzler. Фабрика кожаных изделий. Все права защищены.</p>
+          <span className="hidden sm:inline">·</span>
+          <Link to="/privacy-policy" className="underline hover:text-foreground transition-colors">
+            Политика обработки персональных данных
+          </Link>
         </div>
       </div>
     </footer>
