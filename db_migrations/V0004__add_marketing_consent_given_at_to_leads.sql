@@ -1,0 +1,1 @@
+ALTER TABLE leads ADD COLUMN IF NOT EXISTS marketing_consent_given_at TIMESTAMP;

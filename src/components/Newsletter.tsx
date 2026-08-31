@@ -15,11 +15,18 @@ export function Newsletter() {
   const [loading, setLoading] = useState(false);
   const [consentGiven, setConsentGiven] = useState(false);
   const [consentGivenAt, setConsentGivenAt] = useState<string | null>(null);
+  const [marketingConsentGiven, setMarketingConsentGiven] = useState(false);
+  const [marketingConsentGivenAt, setMarketingConsentGivenAt] = useState<string | null>(null);
   const { toast } = useToast();
 
   const handleConsentChange = (checked: boolean) => {
     setConsentGiven(checked);
     setConsentGivenAt(checked ? new Date().toISOString() : null);
+  };
+
+  const handleMarketingConsentChange = (checked: boolean) => {
+    setMarketingConsentGiven(checked);
+    setMarketingConsentGivenAt(checked ? new Date().toISOString() : null);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -43,6 +50,8 @@ export function Newsletter() {
           message,
           consent_given: true,
           consent_given_at: consentGivenAt,
+          marketing_consent_given: marketingConsentGiven,
+          marketing_consent_given_at: marketingConsentGivenAt,
         }),
       });
       if (!res.ok) throw new Error("Ошибка отправки");
@@ -55,6 +64,8 @@ export function Newsletter() {
       setMessage("");
       setConsentGiven(false);
       setConsentGivenAt(null);
+      setMarketingConsentGiven(false);
+      setMarketingConsentGivenAt(null);
     } catch {
       toast({
         title: "Не удалось отправить заявку",
@@ -121,15 +132,35 @@ export function Newsletter() {
                 className="mt-0.5 h-4 w-4 shrink-0 rounded border-2 border-input accent-primary"
               />
               <span>
-                Я подтверждаю, что ознакомился с{" "}
-                <Link to="/privacy-policy" target="_blank" className="underline hover:text-foreground transition-colors">
-                  Политикой обработки персональных данных
-                </Link>{" "}
-                и даю{" "}
+                Нажимая кнопку "Отправить заявку", я даю своё{" "}
                 <Link to="/consent-policy" target="_blank" className="underline hover:text-foreground transition-colors">
-                  согласие
+                  Согласие
                 </Link>{" "}
-                на обработку моих персональных данных в соответствии с ней.
+                на обработку моих персональных данных в соответствии с Федеральным законом от 27.07.2006 года № 152-ФЗ «О персональных данных» на условиях и для целей, определённых{" "}
+                <Link to="/privacy-policy" target="_blank" className="underline hover:text-foreground transition-colors">
+                  Политикой конфиденциальности
+                </Link>
+                .
+              </span>
+            </label>
+
+            <label className="flex items-start gap-3 text-xs text-muted-foreground cursor-pointer">
+              <input
+                type="checkbox"
+                checked={marketingConsentGiven}
+                onChange={(e) => handleMarketingConsentChange(e.target.checked)}
+                className="mt-0.5 h-4 w-4 shrink-0 rounded border-2 border-input accent-primary"
+              />
+              <span>
+                Нажимая кнопку "Отправить заявку", я даю своё согласие на получение сообщений информационного (рекламного) характера в соответствии с Федеральным законом от 13.03.2006 г № 38-ФЗ «О рекламе» на условиях и для целей, определённых{" "}
+                <Link to="/privacy-policy" target="_blank" className="underline hover:text-foreground transition-colors">
+                  Политикой конфиденциальности
+                </Link>
+                ,{" "}
+                <Link to="/marketing-consent" target="_blank" className="underline hover:text-foreground transition-colors">
+                  Согласием на осуществление рекламной рассылки
+                </Link>
+                .
               </span>
             </label>
           </form>

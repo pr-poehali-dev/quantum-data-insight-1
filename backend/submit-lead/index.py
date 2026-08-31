@@ -36,6 +36,8 @@ def handler(event: dict, context) -> dict:
     message = (body.get('message') or '').strip()
     consent_given = bool(body.get('consent_given'))
     consent_given_at = (body.get('consent_given_at') or '').strip()
+    marketing_consent_given = bool(body.get('marketing_consent_given'))
+    marketing_consent_given_at = (body.get('marketing_consent_given_at') or '').strip() or None
 
     if not name or not contact:
         return {
@@ -52,6 +54,8 @@ def handler(event: dict, context) -> dict:
         }
 
     print(f"Consent given at {consent_given_at} for lead: name={name}, contact={contact}")
+    if marketing_consent_given:
+        print(f"Marketing consent given at {marketing_consent_given_at} for lead: name={name}, contact={contact}")
 
     dsn = os.environ['DATABASE_URL']
     schema = os.environ.get('MAIN_DB_SCHEMA', 'public')
@@ -60,13 +64,13 @@ def handler(event: dict, context) -> dict:
     conn.autocommit = True
     cur = conn.cursor()
     cur.execute(
-        f"INSERT INTO {schema}.leads (name, contact, message, consent_given_at) VALUES (%s, %s, %s, %s) RETURNING id",
-        (name, contact, message, consent_given_at)
+        f"INSERT INTO {schema}.leads (name, contact, message, consent_given_at, marketing_consent_given_at) VALUES (%s, %s, %s, %s, %s) RETURNING id",
+        (name, contact, message, consent_given_at, marketing_consent_given_at)
     )
     lead_id = cur.fetchone()[0]
 
-    email_sent, email_error = send_email(name, contact, message, consent_given_at)
-    telegram_sent, telegram_error = send_telegram(name, contact, message, consent_given_at)
+    email_sent, email_error = send_email(name, contact, message, consent_given_at, marketing_consent_given_at)
+    telegram_sent, telegram_error = send_telegram(name, contact, message, consent_given_at, marketing_consent_given_at)
 
     cur.execute(
         f"UPDATE {schema}.leads SET email_sent = %s, telegram_sent = %s WHERE id = %s",
@@ -90,7 +94,7 @@ def handler(event: dict, context) -> dict:
     }
 
 
-def send_email(name: str, contact: str, message: str, consent_given_at: str = ''):
+def send_email(name: str, contact: str, message: str, consent_given_at: str = '', marketing_consent_given_at: str = None):
     host = os.environ.get('SMTP_HOST')
     port = os.environ.get('SMTP_PORT')
     user = os.environ.get('SMTP_USER')
@@ -100,7 +104,12 @@ def send_email(name: str, contact: str, message: str, consent_given_at: str = ''
     if not all([host, port, user, password]):
         return False, 'no_smtp_config'
 
-    text = f"Новая заявка с сайта Anzler\n\nИмя: {name}\nКонтакт: {contact}\nСообщение: {message or '-'}\nСогласие на обработку ПДн: {consent_given_at or '-'}"
+    text = (
+        f"Новая заявка с сайта Anzler\n\n"
+        f"Имя: {name}\nКонтакт: {contact}\nСообщение: {message or '-'}\n"
+        f"Согласие на обработку ПДн: {consent_given_at or '-'}\n"
+        f"Согласие на рекламную рассылку: {marketing_consent_given_at or 'не дано'}"
+    )
     msg = MIMEText(text, _charset='utf-8')
     msg['Subject'] = 'Новая заявка с сайта Anzler'
     msg['From'] = user
@@ -115,14 +124,19 @@ def send_email(name: str, contact: str, message: str, consent_given_at: str = ''
         return False, f'{type(e).__name__}: {e}'
 
 
-def send_telegram(name: str, contact: str, message: str, consent_given_at: str = ''):
+def send_telegram(name: str, contact: str, message: str, consent_given_at: str = '', marketing_consent_given_at: str = None):
     token = os.environ.get('TELEGRAM_BOT_TOKEN')
     chat_id = os.environ.get('TELEGRAM_CHAT_ID')
 
     if not token or not chat_id:
         return False, 'no_telegram_config'
 
-    text = f"🔔 Новая заявка с сайта Anzler\n\n👤 Имя: {name}\n📞 Контакт: {contact}\n💬 Сообщение: {message or '-'}\n✅ Согласие на обработку ПДн: {consent_given_at or '-'}"
+    text = (
+        f"🔔 Новая заявка с сайта Anzler\n\n"
+        f"👤 Имя: {name}\n📞 Контакт: {contact}\n💬 Сообщение: {message or '-'}\n"
+        f"✅ Согласие на обработку ПДн: {consent_given_at or '-'}\n"
+        f"📢 Согласие на рекламную рассылку: {marketing_consent_given_at or 'не дано'}"
+    )
     url = f"https://api.telegram.org/bot{token}/sendMessage"
     data = urllib.parse.urlencode({'chat_id': chat_id, 'text': text}).encode()
 
