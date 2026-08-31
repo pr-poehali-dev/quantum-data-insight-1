@@ -1,0 +1,18 @@
+# Настройка для корректной работы одностраничного (SPA) сайта Anzler
+# на обычном хостинге reg.ru (Apache).
+# Все запросы к несуществующим файлам направляются на index.html,
+# чтобы работали внутренние страницы (/privacy-policy, /consent-policy и т.д.)
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Не трогаем реальные файлы и папки, а также PHP-скрипт формы
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  RewriteRule ^send_form\.php$ - [L]
+
+  RewriteRule ^ index.html [L]
+</IfModule>
